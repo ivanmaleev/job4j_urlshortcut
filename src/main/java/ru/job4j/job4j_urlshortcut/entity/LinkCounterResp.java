@@ -12,6 +12,6 @@ public class LinkCounterResp {
 
     public LinkCounterResp(LinkCounter linkCounter) {
         this.url = linkCounter.getLinks().getLongUrl();
-        this.total = linkCounter.getCount();
+        this.total = linkCounter.getCounter();
     }
 }

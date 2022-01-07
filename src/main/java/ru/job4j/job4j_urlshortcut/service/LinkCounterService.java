@@ -23,12 +23,7 @@ public class LinkCounterService {
 
     @Transactional
     public void incrementCounter(Links links) {
-        LinkCounter counter = linkCounterRepository.findByLinks(links);
-        if (counter == null) {
-            createCounter(links);
-        }
-        counter.setCount(counter.getCount() + 1);
-        linkCounterRepository.save(counter);
+        linkCounterRepository.increment(links);
     }
 
     public void createCounter(Links links) {

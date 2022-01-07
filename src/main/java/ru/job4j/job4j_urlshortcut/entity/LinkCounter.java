@@ -13,7 +13,7 @@ public class LinkCounter {
     private int id;
     @OneToOne
     private Links links;
-    private int count = 0;
+    private int counter = 0;
 
     public LinkCounter(Links links) {
         this.links = links;
