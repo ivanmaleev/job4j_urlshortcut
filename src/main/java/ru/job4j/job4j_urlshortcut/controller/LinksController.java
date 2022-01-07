@@ -1,6 +1,6 @@
 package ru.job4j.job4j_urlshortcut.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +15,10 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/url")
+@AllArgsConstructor
 public class LinksController {
 
     private LinksService linksService;
-
-    @Autowired
-    public LinksController(LinksService linksService) {
-        this.linksService = linksService;
-    }
 
     @PostMapping("/convert")
     public ResponseEntity<ConvertResp> convertToShortUrl(@RequestBody @Valid UrlReq Url) {

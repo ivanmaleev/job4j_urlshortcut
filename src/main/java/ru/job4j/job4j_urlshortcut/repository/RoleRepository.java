@@ -6,5 +6,6 @@ import ru.job4j.job4j_urlshortcut.entity.Role;
 
 @Repository
 public interface RoleRepository extends CrudRepository<Role, Integer> {
+
     Role findByName(String name);
 }

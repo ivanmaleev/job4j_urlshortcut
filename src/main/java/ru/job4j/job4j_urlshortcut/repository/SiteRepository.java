@@ -6,5 +6,6 @@ import ru.job4j.job4j_urlshortcut.entity.Site;
 
 @Repository
 public interface SiteRepository extends CrudRepository<Site, Integer> {
+
     Site findByUsername(String login);
 }

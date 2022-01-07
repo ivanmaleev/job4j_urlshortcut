@@ -1,6 +1,6 @@
 package ru.job4j.job4j_urlshortcut.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,14 +13,10 @@ import java.util.Collection;
 
 @Controller
 @RequestMapping("/statistic")
+@AllArgsConstructor
 public class StatisticController {
 
     private LinkCounterService linkCounterService;
-
-    @Autowired
-    public StatisticController(LinkCounterService linkCounterService) {
-        this.linkCounterService = linkCounterService;
-    }
 
     @GetMapping("/")
     public ResponseEntity<Collection<LinkCounterResp>> findAll() {

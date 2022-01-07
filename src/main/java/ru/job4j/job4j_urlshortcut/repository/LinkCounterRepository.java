@@ -9,6 +9,7 @@ import ru.job4j.job4j_urlshortcut.entity.Links;
 
 @Repository
 public interface LinkCounterRepository extends CrudRepository<LinkCounter, Integer> {
+
     LinkCounter findByLinks(Links link);
 
     @Modifying
