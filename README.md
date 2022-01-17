@@ -23,30 +23,35 @@ Usage
 - 1.Registration.
 - req. POST /registration 
 body: {
-       site : "site.ru"
+       "site" : "site.ru"
        }
 - resp.
 body: {
-       registration : true/false, 
-       login: "site.ru",
-       password : "Password"
+       "registration" : true/false, 
+       "login": "site.ru",
+       "password" : "Password"
        }
 - 2.Authorisation.
 POST /login
 body: {
-       username : "site.ru",
-       password : "Password"       
+       "username" : "site.ru",
+       "password" : "Password"       
        }
 - 3.URL registration.
 POST /convert
 body: {
-       url : "http://fullxxxxxxxxxxxxxxxxxxx.ru"
+       "url" : "http://fullxxxxxxxxxxxxxxxxxxx.ru"
        }
 resp.
 body: {
-       code : "http://short"
+       "code" : "http://short"
        }
 - 4.Redirect.
 Get /redirect/ShortUrl
 - 5.Statistics.
 GET /statistic
+
+Docker
+----------------------------------------------------
+There is a docker-compose.yml file in the root of the project. Go to the root of the project, 
+then run the command "docker-compose up".
