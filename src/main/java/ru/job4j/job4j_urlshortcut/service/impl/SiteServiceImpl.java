@@ -1,5 +1,6 @@
 package ru.job4j.job4j_urlshortcut.service.impl;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,19 +13,12 @@ import ru.job4j.job4j_urlshortcut.repository.SiteRepository;
 import ru.job4j.job4j_urlshortcut.service.SiteService;
 
 @Service
+@AllArgsConstructor
 public class SiteServiceImpl implements SiteService {
 
     private SiteRepository siteRepository;
     private RoleRepository roleRepository;
     private BCryptPasswordEncoder encoder;
-
-    @Autowired
-    public SiteServiceImpl(SiteRepository siteRepository,
-                           RoleRepository roleRepository, BCryptPasswordEncoder encoder) {
-        this.siteRepository = siteRepository;
-        this.roleRepository = roleRepository;
-        this.encoder = encoder;
-    }
 
     @Override
     public SiteRegResp register(String siteName) throws IllegalArgumentException {
